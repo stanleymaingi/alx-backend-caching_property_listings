@@ -1,0 +1,86 @@
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+.vs/
+
+# ==========================
+# Django
+# ==========================
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+*.pot
+
+# Django migrations (optional)
+# Uncomment if you don't want to track migrations
+# */migrations/
+# !*/migrations/__init__.py
+
+# ==========================
+# Environment Variables
+# ==========================
+.env
+.env.*
+*.env
+
+# ==========================
+# IDE / Editor
+# ==========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.DS_Store
+
+# ==========================
+# Docker
+# ==========================
+docker-compose.override.yml
+*.pid
+*.seed
+
+# ==========================
+# PostgreSQL
+# ==========================
+*.pgsql
+postgres_data/
+
+# ==========================
+# Redis
+# ==========================
+dump.rdb
+
+# ==========================
+# Coverage / Testing
+# ==========================
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+
+# ==========================
+# Build / Distribution
+# ==========================
+build/
+dist/
+*.egg-info/
+
+# ==========================
+# Misc
+# ==========================
+*.bak
+*.tmp
+*.temp
