@@ -1,14 +1,14 @@
-version: '3.9'
+version: "3.9"
 
 services:
-  postgres:
+  db:
     image: postgres:latest
     container_name: postgres_db
     restart: always
     environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
       POSTGRES_DB: property_db
-      POSTGRES_USER: property_user
-      POSTGRES_PASSWORD: property_password
     ports:
       - "5432:5432"
     volumes:
@@ -20,6 +20,22 @@ services:
     restart: always
     ports:
       - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  web:
+    build: .
+    container_name: django_web
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
 
 volumes:
   postgres_data:
+  redis_data:
+

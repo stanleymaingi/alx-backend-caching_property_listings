@@ -74,16 +74,18 @@ WSGI_APPLICATION = 'alx_backend_caching_property_listings.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'property_db',
-        'USER': 'property_user',
-        'PASSWORD': 'property_password',
-        'HOST': 'localhost',  # use 'postgres' if Django runs inside Docker
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': '127.0.0.1',  # instead of 'db'
         'PORT': '5432',
     }
 }
+
 
 
 
@@ -126,11 +128,12 @@ STATIC_URL = 'static/'
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",  # use redis://redis:6379/1 if in Docker
+        "LOCATION": "redis://127.0.0.1:6379/1",  # local Redis port
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
     }
 }
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
