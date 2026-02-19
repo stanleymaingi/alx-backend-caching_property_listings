@@ -2,6 +2,9 @@
 from django.core.cache import cache # type: ignore
 from .models import Property
 
+
+default_app_config = "properties.apps.PropertiesConfig"
+
 def get_all_properties():
     # Try to get cached queryset
     properties = cache.get('all_properties')

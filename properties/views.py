@@ -1,6 +1,6 @@
 # properties/views.py
-from django.http import JsonResponse
-from django.views.decorators.cache import cache_page
+from django.http import JsonResponse # type: ignore
+from django.views.decorators.cache import cache_page # type: ignore
 from .models import Property
 
 
